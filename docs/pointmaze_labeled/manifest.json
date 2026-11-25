@@ -1,0 +1,761 @@
+{
+  "schema": "pointmaze-labeled-release-manifest-v1",
+  "release": "pointmaze-labeled-v1.0.0",
+  "upstream_repository": "https://github.com/seohongpark/ogbench",
+  "upstream_commit": "1d4140997f60c52c6fb0702ec100dc988b18c548",
+  "field_semantics": {
+    "behavior_goals": "Collection target active before actions[t].",
+    "next_behavior_goals": "Collection target after step and immediate success-triggered goal resampling.",
+    "goal_success": "Native success event of the recorded action.",
+    "goal_switch": "Success-triggered resampling event, including resampling the same target.",
+    "segment_start": "Inclusive first action index in the behavior-goal segment, local to each split.",
+    "segment_end": "Exclusive action boundary; also the next-state endpoint when it exists in the record.",
+    "behavior_segment_id": "Collection-goal segment identity.",
+    "record_id": "Continuous collection record identity; validation IDs need not start at zero."
+  },
+  "turning_point_scope": "Source archives record behavior-goal switches and segment boundaries. They do not contain separate geometric turn-point or oracle-waypoint labels.",
+  "files": [
+    {
+      "filename": "pointmaze-medium-navigate-v0.npz",
+      "environment": "pointmaze-medium-navigate-v0",
+      "split": "train",
+      "sha256": "3b0757b01dab948d0737f9cccbaee29cf4b670301769e49d24ed601472b8accc",
+      "bytes": 27674732,
+      "rows": 1001000,
+      "records": 1000,
+      "record_rows": [
+        1001
+      ],
+      "effective_transitions": 1000000,
+      "terminal_rows": 1000,
+      "real_action_rows": 1000000,
+      "terminal_row_semantics": "dummy final state; no real action",
+      "raw_segment_end": "exclusive action end; endpoint observation is retained",
+      "fields": {
+        "observations": {
+          "shape": [
+            1001000,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "next_observations": {
+          "shape": [
+            1001000,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "actions": {
+          "shape": [
+            1001000,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "qpos": {
+          "shape": [
+            1001000,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "qvel": {
+          "shape": [
+            1001000,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "behavior_goals": {
+          "shape": [
+            1001000,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "next_behavior_goals": {
+          "shape": [
+            1001000,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "terminals": {
+          "shape": [
+            1001000
+          ],
+          "dtype": "bool"
+        },
+        "goal_success": {
+          "shape": [
+            1001000
+          ],
+          "dtype": "bool"
+        },
+        "goal_switch": {
+          "shape": [
+            1001000
+          ],
+          "dtype": "bool"
+        },
+        "record_id": {
+          "shape": [
+            1001000
+          ],
+          "dtype": "int64"
+        },
+        "behavior_segment_id": {
+          "shape": [
+            1001000
+          ],
+          "dtype": "int64"
+        },
+        "segment_start": {
+          "shape": [
+            1001000
+          ],
+          "dtype": "int64"
+        },
+        "segment_end": {
+          "shape": [
+            1001000
+          ],
+          "dtype": "int64"
+        },
+        "valids": {
+          "shape": [
+            1001000
+          ],
+          "dtype": "float32"
+        }
+      },
+      "collector_version": {
+        "numpy": "1.26.4",
+        "gymnasium": "1.2.3",
+        "mujoco": "3.3.6"
+      },
+      "noise_std": 0.5,
+      "seed_base": 470000,
+      "collection_seed_note": "deterministic per-record seed"
+    },
+    {
+      "filename": "pointmaze-medium-navigate-v0-val.npz",
+      "environment": "pointmaze-medium-navigate-v0",
+      "split": "validation",
+      "sha256": "3636fc7ee3d3ec9f10ab159ce44f768e0b0d35647efbbf96df3eb18ec72edf16",
+      "bytes": 2759007,
+      "rows": 100100,
+      "records": 100,
+      "record_rows": [
+        1001
+      ],
+      "effective_transitions": 100000,
+      "terminal_rows": 100,
+      "real_action_rows": 100000,
+      "terminal_row_semantics": "dummy final state; no real action",
+      "raw_segment_end": "exclusive action end; endpoint observation is retained",
+      "fields": {
+        "observations": {
+          "shape": [
+            100100,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "next_observations": {
+          "shape": [
+            100100,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "actions": {
+          "shape": [
+            100100,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "qpos": {
+          "shape": [
+            100100,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "qvel": {
+          "shape": [
+            100100,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "behavior_goals": {
+          "shape": [
+            100100,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "next_behavior_goals": {
+          "shape": [
+            100100,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "terminals": {
+          "shape": [
+            100100
+          ],
+          "dtype": "bool"
+        },
+        "goal_success": {
+          "shape": [
+            100100
+          ],
+          "dtype": "bool"
+        },
+        "goal_switch": {
+          "shape": [
+            100100
+          ],
+          "dtype": "bool"
+        },
+        "record_id": {
+          "shape": [
+            100100
+          ],
+          "dtype": "int64"
+        },
+        "behavior_segment_id": {
+          "shape": [
+            100100
+          ],
+          "dtype": "int64"
+        },
+        "segment_start": {
+          "shape": [
+            100100
+          ],
+          "dtype": "int64"
+        },
+        "segment_end": {
+          "shape": [
+            100100
+          ],
+          "dtype": "int64"
+        },
+        "valids": {
+          "shape": [
+            100100
+          ],
+          "dtype": "float32"
+        }
+      },
+      "collector_version": {
+        "numpy": "1.26.4",
+        "gymnasium": "1.2.3",
+        "mujoco": "3.3.6"
+      },
+      "noise_std": 0.5,
+      "seed_base": 570000,
+      "collection_seed_note": "deterministic per-record seed"
+    },
+    {
+      "filename": "pointmaze-large-navigate-v0.npz",
+      "environment": "pointmaze-large-navigate-v0",
+      "split": "train",
+      "sha256": "a84893d95b8e62a9527d7742833a68c9a44fe58d349dd7db528386bf750f7012",
+      "bytes": 27808840,
+      "rows": 1001000,
+      "records": 1000,
+      "record_rows": [
+        1001
+      ],
+      "effective_transitions": 1000000,
+      "terminal_rows": 1000,
+      "real_action_rows": 1001000,
+      "terminal_row_semantics": "real final action; excluded to match OGBench shifted-next-state convention",
+      "raw_segment_end": "exclusive action end; clip to terminal observation index before state indexing",
+      "fields": {
+        "behavior_goals": {
+          "shape": [
+            1001000,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "next_behavior_goals": {
+          "shape": [
+            1001000,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "next_observations": {
+          "shape": [
+            1001000,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "goal_success": {
+          "shape": [
+            1001000
+          ],
+          "dtype": "bool"
+        },
+        "goal_switch": {
+          "shape": [
+            1001000
+          ],
+          "dtype": "bool"
+        },
+        "record_id": {
+          "shape": [
+            1001000
+          ],
+          "dtype": "int64"
+        },
+        "observations": {
+          "shape": [
+            1001000,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "actions": {
+          "shape": [
+            1001000,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "terminals": {
+          "shape": [
+            1001000
+          ],
+          "dtype": "bool"
+        },
+        "qpos": {
+          "shape": [
+            1001000,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "qvel": {
+          "shape": [
+            1001000,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "segment_start": {
+          "shape": [
+            1001000
+          ],
+          "dtype": "int64"
+        },
+        "segment_end": {
+          "shape": [
+            1001000
+          ],
+          "dtype": "int64"
+        },
+        "behavior_segment_id": {
+          "shape": [
+            1001000
+          ],
+          "dtype": "int64"
+        }
+      },
+      "collector_version": {
+        "numpy": "2.3.4",
+        "gymnasium": "1.2.2",
+        "mujoco": "3.10.0"
+      },
+      "noise_std": 0.5,
+      "seed_base": null,
+      "collection_seed_note": "official Point collector did not apply its seed flag; original random draws cannot be regenerated exactly"
+    },
+    {
+      "filename": "pointmaze-large-navigate-v0-val.npz",
+      "environment": "pointmaze-large-navigate-v0",
+      "split": "validation",
+      "sha256": "9aa5d5c0808fd80029805f2f25af3c71e69becc13998c49d25ca86389d75ba6c",
+      "bytes": 2782579,
+      "rows": 100100,
+      "records": 100,
+      "record_rows": [
+        1001
+      ],
+      "effective_transitions": 100000,
+      "terminal_rows": 100,
+      "real_action_rows": 100100,
+      "terminal_row_semantics": "real final action; excluded to match OGBench shifted-next-state convention",
+      "raw_segment_end": "exclusive action end; clip to terminal observation index before state indexing",
+      "fields": {
+        "behavior_goals": {
+          "shape": [
+            100100,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "next_behavior_goals": {
+          "shape": [
+            100100,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "next_observations": {
+          "shape": [
+            100100,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "goal_success": {
+          "shape": [
+            100100
+          ],
+          "dtype": "bool"
+        },
+        "goal_switch": {
+          "shape": [
+            100100
+          ],
+          "dtype": "bool"
+        },
+        "record_id": {
+          "shape": [
+            100100
+          ],
+          "dtype": "int64"
+        },
+        "observations": {
+          "shape": [
+            100100,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "actions": {
+          "shape": [
+            100100,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "terminals": {
+          "shape": [
+            100100
+          ],
+          "dtype": "bool"
+        },
+        "qpos": {
+          "shape": [
+            100100,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "qvel": {
+          "shape": [
+            100100,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "segment_start": {
+          "shape": [
+            100100
+          ],
+          "dtype": "int64"
+        },
+        "segment_end": {
+          "shape": [
+            100100
+          ],
+          "dtype": "int64"
+        },
+        "behavior_segment_id": {
+          "shape": [
+            100100
+          ],
+          "dtype": "int64"
+        }
+      },
+      "collector_version": {
+        "numpy": "2.3.4",
+        "gymnasium": "1.2.2",
+        "mujoco": "3.10.0"
+      },
+      "noise_std": 0.5,
+      "seed_base": null,
+      "collection_seed_note": "official Point collector did not apply its seed flag; original random draws cannot be regenerated exactly"
+    },
+    {
+      "filename": "pointmaze-giant-navigate-v0.npz",
+      "environment": "pointmaze-giant-navigate-v0",
+      "split": "train",
+      "sha256": "c486e005b2786d6555119ec3deb9c9ba35d5cc98bf3b582bfb619f0973214b2a",
+      "bytes": 27759672,
+      "rows": 1000500,
+      "records": 500,
+      "record_rows": [
+        2001
+      ],
+      "effective_transitions": 1000000,
+      "terminal_rows": 500,
+      "real_action_rows": 1000500,
+      "terminal_row_semantics": "real final action; excluded to match OGBench shifted-next-state convention",
+      "raw_segment_end": "exclusive action end; clip to terminal observation index before state indexing",
+      "fields": {
+        "behavior_goals": {
+          "shape": [
+            1000500,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "next_behavior_goals": {
+          "shape": [
+            1000500,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "next_observations": {
+          "shape": [
+            1000500,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "goal_success": {
+          "shape": [
+            1000500
+          ],
+          "dtype": "bool"
+        },
+        "goal_switch": {
+          "shape": [
+            1000500
+          ],
+          "dtype": "bool"
+        },
+        "record_id": {
+          "shape": [
+            1000500
+          ],
+          "dtype": "int64"
+        },
+        "observations": {
+          "shape": [
+            1000500,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "actions": {
+          "shape": [
+            1000500,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "terminals": {
+          "shape": [
+            1000500
+          ],
+          "dtype": "bool"
+        },
+        "qpos": {
+          "shape": [
+            1000500,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "qvel": {
+          "shape": [
+            1000500,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "segment_start": {
+          "shape": [
+            1000500
+          ],
+          "dtype": "int64"
+        },
+        "segment_end": {
+          "shape": [
+            1000500
+          ],
+          "dtype": "int64"
+        },
+        "behavior_segment_id": {
+          "shape": [
+            1000500
+          ],
+          "dtype": "int64"
+        }
+      },
+      "collector_version": {
+        "numpy": "2.3.4",
+        "gymnasium": "1.2.2",
+        "mujoco": "3.10.0"
+      },
+      "noise_std": 0.5,
+      "seed_base": null,
+      "collection_seed_note": "official Point collector did not apply its seed flag; original random draws cannot be regenerated exactly"
+    },
+    {
+      "filename": "pointmaze-giant-navigate-v0-val.npz",
+      "environment": "pointmaze-giant-navigate-v0",
+      "split": "validation",
+      "sha256": "20409c1f88c7e93f1910050d1186034d6dfc755c32dd45a16bc196e0e93e80de",
+      "bytes": 2782786,
+      "rows": 100050,
+      "records": 50,
+      "record_rows": [
+        2001
+      ],
+      "effective_transitions": 100000,
+      "terminal_rows": 50,
+      "real_action_rows": 100050,
+      "terminal_row_semantics": "real final action; excluded to match OGBench shifted-next-state convention",
+      "raw_segment_end": "exclusive action end; clip to terminal observation index before state indexing",
+      "fields": {
+        "behavior_goals": {
+          "shape": [
+            100050,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "next_behavior_goals": {
+          "shape": [
+            100050,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "next_observations": {
+          "shape": [
+            100050,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "goal_success": {
+          "shape": [
+            100050
+          ],
+          "dtype": "bool"
+        },
+        "goal_switch": {
+          "shape": [
+            100050
+          ],
+          "dtype": "bool"
+        },
+        "record_id": {
+          "shape": [
+            100050
+          ],
+          "dtype": "int64"
+        },
+        "observations": {
+          "shape": [
+            100050,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "actions": {
+          "shape": [
+            100050,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "terminals": {
+          "shape": [
+            100050
+          ],
+          "dtype": "bool"
+        },
+        "qpos": {
+          "shape": [
+            100050,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "qvel": {
+          "shape": [
+            100050,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "segment_start": {
+          "shape": [
+            100050
+          ],
+          "dtype": "int64"
+        },
+        "segment_end": {
+          "shape": [
+            100050
+          ],
+          "dtype": "int64"
+        },
+        "behavior_segment_id": {
+          "shape": [
+            100050
+          ],
+          "dtype": "int64"
+        }
+      },
+      "collector_version": {
+        "numpy": "2.3.4",
+        "gymnasium": "1.2.2",
+        "mujoco": "3.10.0"
+      },
+      "noise_std": 0.5,
+      "seed_base": null,
+      "collection_seed_note": "official Point collector did not apply its seed flag; original random draws cannot be regenerated exactly"
+    }
+  ],
+  "collection_source_fingerprints": [
+    {
+      "filename": "collect_labeled.py",
+      "sha256": "e1f088a6435e6305c8f2ae8d1e9d39aea40e6fcb80f23637dc45320f5b1da016",
+      "bytes": 7549
+    },
+    {
+      "filename": "collect_official_labeled.py",
+      "sha256": "15810e89f59c3febc62c242301a4917c6fbc5f0da2a0d727b49b494652e1b466",
+      "bytes": 9862
+    },
+    {
+      "filename": "generate_locomaze.original.py",
+      "sha256": "5ee4a4cf3a0731b1c7b8ae3444b6f8d38bbe596f5fa2e92b4b8f1af4b6e3816c",
+      "bytes": 8481
+    },
+    {
+      "filename": "commands.original.sh",
+      "sha256": "ac1693b6536720961d34b74c6fcf0895edf3364115609ead0f2f04417d25b42a",
+      "bytes": 21161
+    }
+  ]
+}

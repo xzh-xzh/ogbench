@@ -28,6 +28,12 @@
 
 </div>
 
+## Labeled PointMaze Navigate
+
+This fork hosts newly collected Medium, Large, and Giant PointMaze Navigate trajectories with per-action behavior goals, goal switches, and segment boundaries. Each map has a training and a validation NPZ.
+
+[Dataset documentation](docs/pointmaze_labeled/README.md) · [Download v1.0.0](https://github.com/xzh-xzh/ogbench/releases/tag/pointmaze-labeled-v1.0.0)
+
 # Overview
 
 OGBench is a benchmark designed to facilitate algorithms research in offline goal-conditioned reinforcement learning (RL),
